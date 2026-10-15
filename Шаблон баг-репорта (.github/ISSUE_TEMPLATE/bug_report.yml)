@@ -1,0 +1,55 @@
+name: Bug Report
+description: Сообщить об ошибке в работе платформы
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за сообщение об ошибке! Пожалуйста, заполните поля ниже.
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание проблемы
+      description: Что произошло? Опишите ошибку чётко и кратко.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Шаги для воспроизведения
+      description: Опишите, как повторить ошибку.
+      placeholder: |
+        1. Перейти на страницу '...'
+        2. Нажать на '...'
+        3. Увидеть ошибку
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Окружение
+      options:
+        - Development (local)
+        - Staging
+        - Production
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      placeholder: "e.g., 0.1.0"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверка
+      options:
+        - label: Я проверил, что эта ошибка не была сообщена ранее
+          required: true
